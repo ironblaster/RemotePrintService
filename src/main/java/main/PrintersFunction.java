@@ -15,7 +15,7 @@ import javax.print.PrintException;
 import javax.print.PrintService;
 import javax.print.SimpleDoc;
 
-public class FunzioniStampa {
+public class PrintersFunction {
 	
 	public static Collection<String> getInstalledPrinters () {
 		Collection<String> printers = new ArrayList<String>();
@@ -33,7 +33,7 @@ public class FunzioniStampa {
 	
 	
 	
-	 public static void Stampa(String printerName,ByteArrayOutputStream PdfDocument) throws PrintException, IOException {
+	 public static void PrintPdf(String printerName,ByteArrayOutputStream PdfDocument) throws PrintException, IOException {
 
 		 PrintService stampante = null;
 

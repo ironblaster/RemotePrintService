@@ -2,7 +2,6 @@ package main;
 
 import java.awt.print.PrinterJob;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ public class PrintersFunction {
 	
 	
 	
-	 public static void PrintPdf(String printerName,ByteArrayOutputStream PdfDocument) throws PrintException, IOException {
+	 public static void PrintPdf(String printerName,byte[] PdfDocument) throws PrintException, IOException {
 
 		 PrintService stampante = null;
 
@@ -50,7 +49,7 @@ public class PrintersFunction {
 		
 		 
 
-		             InputStream is = new ByteArrayInputStream(PdfDocument.toByteArray());
+		             InputStream is = new ByteArrayInputStream(PdfDocument);
 		             DocFlavor flavor =  DocFlavor.INPUT_STREAM.AUTOSENSE;
 
 		            

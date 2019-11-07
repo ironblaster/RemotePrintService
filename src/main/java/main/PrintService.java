@@ -39,18 +39,6 @@ public class PrintService implements PrintServiceRemote {
 		
 	}
 
-
-
-
-
-
-
-	@Override
-	public void printPdfDocument(String printerName, byte[] pdfDocument, Integer nCopie)
-			throws PrintException, IOException {
-		PrintersFunction.PrintPdf(printerName, pdfDocument, nCopie);
-		
-	}
 	
 	
 	

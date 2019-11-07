@@ -32,13 +32,9 @@ public class PrintersFunction {
 	}
 	
 	
+	
+	
 	 public static void PrintPdf(String printerName,byte[] PdfDocument) throws PrintException, IOException {
-		 
-		 PrintPdf(printerName,PdfDocument,1);
-	 }
-	
-	
-	 public static void PrintPdf(String printerName,byte[] PdfDocument,Integer copie) throws PrintException, IOException {
 
 		 PrintService stampante = null;
 
@@ -59,11 +55,11 @@ public class PrintersFunction {
 		             DocFlavor flavor =  DocFlavor.INPUT_STREAM.AUTOSENSE;
 
 		            
-		             PrintRequestAttributeSet  pras = new HashPrintRequestAttributeSet();
+		          //   PrintRequestAttributeSet  pras = new HashPrintRequestAttributeSet();
 		             //pras.add(new JobName("Lavoro_1", Locale.ITALIAN));
 		             //pras.add(OrientationRequested.PORTRAIT);
 		             //pras.add(MediaSizeName.ISO_A4);
-		             pras.add(new Copies(copie));
+		            // pras.add(new Copies(copie));
 		             //pras.add(Sides.TWO_SIDED_LONG_EDGE);
 		             //pras.add(Finishings.STAPLE);
 		            
@@ -80,7 +76,7 @@ public class PrintersFunction {
 		           
 
 		             // Print it
-		             job.print(doc, pras);
+		             job.print(doc, null);
 		             is.close();
 
 		 }

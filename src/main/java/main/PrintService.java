@@ -29,9 +29,26 @@ public class PrintService implements PrintServiceRemote {
 
 	
 	
-	public void PrintPdfDocument(String printerName,byte[] PdfDocument) throws PrintException, IOException {
+
+
+
+
+	public void printPdfDocument(String printerName, byte[] pdfDocument) throws PrintException, IOException {
 		
-		PrintersFunction.PrintPdf(printerName, PdfDocument);
+		PrintersFunction.PrintPdf(printerName, pdfDocument);
+		
+	}
+
+
+
+
+
+
+
+	@Override
+	public void printPdfDocument(String printerName, byte[] pdfDocument, Integer nCopie)
+			throws PrintException, IOException {
+		PrintersFunction.PrintPdf(printerName, pdfDocument, nCopie);
 		
 	}
 	

@@ -13,6 +13,9 @@ import javax.print.DocPrintJob;
 import javax.print.PrintException;
 import javax.print.PrintService;
 import javax.print.SimpleDoc;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.Copies;
 
 public class PrintersFunction {
 	
@@ -29,10 +32,13 @@ public class PrintersFunction {
 	}
 	
 	
-	
-	
-	
 	 public static void PrintPdf(String printerName,byte[] PdfDocument) throws PrintException, IOException {
+		 
+		 PrintPdf(printerName,PdfDocument,1);
+	 }
+	
+	
+	 public static void PrintPdf(String printerName,byte[] PdfDocument,Integer copie) throws PrintException, IOException {
 
 		 PrintService stampante = null;
 
@@ -53,22 +59,28 @@ public class PrintersFunction {
 		             DocFlavor flavor =  DocFlavor.INPUT_STREAM.AUTOSENSE;
 
 		            
-		             //PrintRequestAttributeSet  pras = new HashPrintRequestAttributeSet();
+		             PrintRequestAttributeSet  pras = new HashPrintRequestAttributeSet();
 		             //pras.add(new JobName("Lavoro_1", Locale.ITALIAN));
 		             //pras.add(OrientationRequested.PORTRAIT);
 		             //pras.add(MediaSizeName.ISO_A4);
-		             //pras.add(new Copies(1));
+		             pras.add(new Copies(copie));
 		             //pras.add(Sides.TWO_SIDED_LONG_EDGE);
 		             //pras.add(Finishings.STAPLE);
 		            
 		             // Create the print job
+		             
+		             
+		             
 		             DocPrintJob job = stampante.createPrintJob();
+		             
+		             
+		             
 		             Doc doc= new SimpleDoc(is, flavor, null);
 		            
 		           
 
 		             // Print it
-		             job.print(doc, null);
+		             job.print(doc, pras);
 		             is.close();
 
 		 }

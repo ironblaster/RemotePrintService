@@ -15,12 +15,12 @@
  
   
   <dependencies>
-  
-      <dependency>
-		  <groupId>io.github.ironblaster</groupId>
-		  <artifactId>RemotePrintServiceCommon</artifactId>
-		  <version>1.0.0-SNAPSHOT</version>
-      </dependency>
+   <dependency>
+    <groupId>com.github.ironblaster</groupId>
+    <artifactId>RemotePrintServiceCommon</artifactId>
+    <version>1.0.0</version>
+</dependency>
+     
   
       <dependency>
   		<groupId>javax</groupId>

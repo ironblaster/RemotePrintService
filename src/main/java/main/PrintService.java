@@ -39,6 +39,18 @@ public class PrintService implements PrintServiceRemote {
 		
 	}
 
+
+
+
+
+
+
+	@Override
+	public void printZplLabel(String printerName, String ZplCode) throws PrintException, IOException {
+		
+		PrintersFunction.PrintZpl(ZplCode, printerName);
+	}
+
 	
 	
 	

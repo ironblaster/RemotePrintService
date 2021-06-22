@@ -86,7 +86,36 @@ public class PrintersFunction {
 	
 	
 	
+	 public static void PrintZpl(String zplCode,String printer) throws PrintException {
+		 
+	        
+	        PrintService stampante = null;
+
+			 PrintService[] printServices = PrinterJob.lookupPrintServices();
+
+			 for (PrintService printService : printServices) {
+			 if(printService.getName().equals(printer)) {
+			 stampante = printService;
+			 }
+
+			 }
+			 if(stampante==null)
+				 throw new PrintException("Printer not Installed");
+
+	        DocPrintJob job = stampante.createPrintJob();
+	        DocFlavor flvr = DocFlavor.BYTE_ARRAY.AUTOSENSE;
+	        Doc doc = new SimpleDoc(zplCode.getBytes(), flvr, null);
+	        try {
+	            job.print(doc, null);
+	        } catch (PrintException e) {
+	           throw e;
+	        }
+		 
+		 
 	
+
+		 
+	 }
 	
 	
 	

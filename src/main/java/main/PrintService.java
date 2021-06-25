@@ -22,6 +22,17 @@ public class PrintService implements PrintServiceRemote {
 
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8892292741230001812L;
+
+
+
+
+
+
+
 	public Collection<String> getIntalledPrinters() {
 		 
 		return PrintersFunction.getInstalledPrinters();
